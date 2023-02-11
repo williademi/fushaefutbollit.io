@@ -1,0 +1,120 @@
+body {
+    font-family:monospace;
+    margin:0;
+    padding:0;
+}
+header {
+    background-color:#49c5b6;
+    padding:20px;
+    text-align:center;
+    color:white;
+    
+}
+h1{
+    margin:0;
+}
+nav{
+    background-color:#2779a7;
+    display:flex;
+    justify-content:center;
+    font-size:12px;
+}
+nav ul{ 
+list-style:none;
+margin: 10px;;
+padding: 10px;;
+display:flex;
+}
+nav li{
+    margin:0 20px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+}
+nav a i {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+main{
+    padding:40px;
+    background-color:#49c5b6;
+    color:white;
+ }
+h2{
+    margin-top:20px;
+}
+footer{
+    background-color:#2779a7;
+    padding:20px;
+    text-align:center;
+}
+#contact{
+    text-align:center;
+    padding:50px;
+}
+#contact h2{
+    font-size:35px;
+    margin-bottom:20px;
+}
+#contact ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#contact li{
+    margin:0 20px;
+    text-align:center;
+}
+#contact a{
+    display:block ;
+    color:#333;
+    text-decoration:none;
+}
+#contact a i{
+    font-size:35px;
+    margin-bottom:10px;
+    
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-style:dotted solid 5px ;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+main section  {
+    background-color:hsl(120, 100%, 70%,0.1);
+}
+
+main section  + #contact{
+     background-color:hsl(120, 100%, 70%,0.0);
+}
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(0, 238, 255); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
