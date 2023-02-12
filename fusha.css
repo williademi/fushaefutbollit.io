@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
 body {
-    font-family:monospace;
+    font-family:'Julee', cursive;
     margin:0;
     padding:0;
+    
+   
 }
 header {
     background-color:#49c5b6;
     padding:20px;
     text-align:center;
-    color:white;
+    color:rgb(47, 45, 45);
+    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm209-ning-06-g.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db56095edd012ac1aa293a4d1e0455d9);
+    background-size: cover;
+    font-weight: bold;
     
 }
 h1{
     margin:0;
+    font-size: 65px;
+  
 }
 nav{
     background-color:#2779a7;
+    background-image: url(https://images.template.net/97252/sage-green-background-0un6c.jpg);
+    background-size: cover;
     display:flex;
     justify-content:center;
     font-size:12px;
@@ -24,14 +34,20 @@ list-style:none;
 margin: 10px;;
 padding: 10px;;
 display:flex;
+gap: 3px;
 }
 nav li{
     margin:0 20px;
 }
 nav a{
-    color:white;
+    color:black;
     text-decoration:none;
+    transition: all 0.3s ease;
+    
 }
+nav a:hover {
+    font-size: 40px;
+  }
 nav a i {
     font-size: 35px;
     margin-bottom: 20px;
@@ -39,13 +55,15 @@ nav a i {
 main{
     padding:40px;
     background-color:#49c5b6;
+    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm422-047-kq92wx9y.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b4691601fc97c7e239f0462f567837b6);
+    background-size: cover;
     color:white;
  }
 h2{
     margin-top:20px;
 }
 footer{
-    background-color:#2779a7;
+    background-color:#1fc84c;
     padding:20px;
     text-align:center;
 }
@@ -107,7 +125,7 @@ main section  + #contact{
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: rgb(0, 238, 255); /* Set a background color */
+    background-color: rgb(24, 26, 26); /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
