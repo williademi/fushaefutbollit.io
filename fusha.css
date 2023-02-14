@@ -3,16 +3,19 @@ body {
     font-family:'Julee', cursive;
     margin:0;
     padding:0;
-    
+    background-image:linear-gradient(to top, rgba(248, 249, 250, 0.057) 0%, rgba(0, 0, 0, 0.625) 50%),url('360_F_520045644_p0HXbREt9zSLQmthKezfgIZxvd0nfQ7n.jpeg');
+    background-size: cover;
+  background-repeat:no-repeat ;
+
    
 }
+
 header {
-    background-color:#49c5b6;
+   
     padding:20px;
     text-align:center;
-    color:rgb(47, 45, 45);
-    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm209-ning-06-g.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=db56095edd012ac1aa293a4d1e0455d9);
-    background-size: cover;
+    color:#8f9b8f;
+    
     font-weight: bold;
     
 }
@@ -51,19 +54,31 @@ nav a:hover {
 nav a i {
     font-size: 35px;
     margin-bottom: 20px;
+    padding: 0px;
+    margin: 0px;
+    transform: scale(1.4);
 }
-main{
+main { 
     padding:40px;
-    background-color:#49c5b6;
-    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm422-047-kq92wx9y.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b4691601fc97c7e239f0462f567837b6);
-    background-size: cover;
-    color:white;
+    color: #8f9b8f;
  }
-h2{
-    margin-top:20px;
+#about,h2,p{
+    margin-right: right 70px;
+    color: #8f9b8f;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 30%;
+
+    
+}
+#galery img {
+    font-size: 45px;
+    border: 5px solid rgb(82, 117, 117);
+    border-radius: 10%;
+
+    
 }
 footer{
-    background-color:#1fc84c;
+    
     padding:20px;
     text-align:center;
 }
@@ -88,7 +103,7 @@ footer{
 }
 #contact a{
     display:block ;
-    color:#333;
+    color:#8f9b8f;
     text-decoration:none;
 }
 #contact a i{
@@ -111,11 +126,13 @@ footer{
   object-fit: cover;
 }
 main section  {
-    background-color:hsl(120, 100%, 70%,0.1);
+    background-color:hsla(120, 100%, 70%, 0);
+    color: #8f9b8f;
 }
 
 main section  + #contact{
      background-color:hsl(120, 100%, 70%,0.0);
+     color: #8f9b8f;
 }
 #myBtn {
     display: none; /* Hidden by default */
@@ -136,3 +153,4 @@ main section  + #contact{
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
   }
+  
