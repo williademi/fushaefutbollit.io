@@ -1,1 +1,107 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a font for the entire page */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for the expense tracker */
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Balance, income, and expense display */
+.inc-exp-container {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style for the money plus and minus */
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.plus {
+    color: #2ecc71;
+}
+
+.minus {
+    color: #c0392b;
+}
+
+/* Style for the transaction history list */
+.list {
+    list-style-type: none;
+}
+
+.list li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the delete button in transaction history */
+.delete-btn {
+    cursor: pointer;
+    background: #e74c3c;
+    color: #fff;
+    border: 0;
+    padding: 5px 9px;
+    border-radius: 50%;
+    line-height: 1.1;
+}
+
+/* Style for the form */
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background: #555;
+}
 
