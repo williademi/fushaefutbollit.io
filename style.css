@@ -5,12 +5,16 @@
     box-sizing: border-box;
 }
 
+
 /* Set a font for the entire page */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #f7f7f7;
     color: #333;
     line-height: 1.6;
+}
+h2{
+    text-align:center;
 }
 
 /* Container for the expense tracker */
