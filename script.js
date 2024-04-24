@@ -1,3 +1,4 @@
+
 // Select DOM elements
 const balanceEl = document.getElementById('balance');
 const moneyPlusEl = document.getElementById('money-plus');
@@ -80,3 +81,165 @@ function updateValues() {
   moneyMinusEl.innerHTML = `-$${expense}`;
 }
 
+// Remove transaction by ID
+function removeTransaction(id) {
+  transactions = transactions.filter(transaction => transaction.id !== id);
+  init();
+}
+
+// Update the local storage transactions
+function updateLocalStorage() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+// Function to save data locally
+function saveLocally() {
+  // Convert transactions array to JSON string
+  const transactionsJSON = JSON.stringify(transactions);
+
+  // Save the JSON string to local storage
+  localStorage.setItem('transactions', transactionsJSON);
+
+  // Optionally, provide feedback to the user that data is saved
+  alert('Data saved locally!');
+}
+
+// Init app
+function init() {
+  // Clear the list
+  listEl.innerHTML = '';
+  balanceList.innerHTML = ''; // Clear the balance per date list
+
+  // Get transactions from local storage
+  const transactionsJSON = localStorage.getItem('transactions');
+
+  // If there are transactions in local storage, parse and assign them to the transactions array
+  if (transactionsJSON) {
+    transactions = JSON.parse(transactionsJSON);
+  }
+
+  // Add transactions to the DOM
+  transactions.forEach(addTransactionDOM);
+
+  // Update balance, income, and expense
+  updateValues();
+
+  // Load balance per date from local storage
+  loadBalancePerDate();
+}
+
+// Event listeners
+form.addEventListener('submit', addTransaction);
+
+init();
+
+// Select the save button
+const saveButton = document.querySelector('.btnSave');
+
+// Add event listener to the save button
+saveButton.addEventListener('click', saveLocally);
+
+// Select the delete button
+const deleteButton = document.querySelector('.btnDelete');
+
+// Add event listener to the delete button
+deleteButton.addEventListener('click', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Clear the transactions array
+  transactions = [];
+
+  // Clear the list by setting innerHTML to an empty string
+  listEl.innerHTML = '';
+
+  // Update the balance, income, and expense
+  updateValues();
+
+  // Update local storage
+  updateLocalStorage();
+});
+
+// Function to save balance per date
+function saveBalancePerDate() {
+  // Get the current date
+  const currentDate = new Date().toLocaleDateString();
+
+  // Get the total balance
+  const totalBalance = parseFloat(balanceEl.textContent.replace('$', ''));
+
+  // Create an object with date and balance
+  const balanceData = {
+    date: currentDate,
+    balance: totalBalance
+  };
+
+  // Get existing balance per date data from local storage
+  let balanceDataList = JSON.parse(localStorage.getItem('balanceData')) || [];
+
+  // Append the new balance data to the existing list
+  balanceDataList.push(balanceData);
+
+  // Save the updated balance per date data to local storage
+  localStorage.setItem('balanceData', JSON.stringify(balanceDataList));
+
+  // Append the balance data to the list on the page
+  const listItem = document.createElement('li');
+  listItem.textContent = `Date: ${balanceData.date}, Balance: $${balanceData.balance.toFixed(2)}`;
+  balanceList.appendChild(listItem);
+}
+
+// Add event listener to the button for saving balance per date
+const saveBalanceButton = document.querySelector('.btnSaveBalance');
+saveBalanceButton.addEventListener('click', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Save balance per date
+  saveBalancePerDate();
+});
+
+// Function to load balance per date from local storage
+function loadBalancePerDate() {
+  // Get balance data from local storage
+  const balanceDataJSON = localStorage.getItem('balanceData');
+
+  // If there's balance data in local storage, parse and display it
+  if (balanceDataJSON) {
+    const balanceDataList = JSON.parse(balanceDataJSON);
+    balanceDataList.forEach(data => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Date: ${data.date}, Balance: $${data.balance.toFixed(2)}`;
+      balanceList.appendChild(listItem);
+    });
+  }
+}
+// Select the delete last balance date button
+const deleteLastBalanceButton = document.querySelector('.btnDeleteBalance');
+
+// Add event listener to the delete last balance date button
+deleteLastBalanceButton.addEventListener('click', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Get the balance per date list
+  const balanceList = document.getElementById('balanceList');
+
+  // Get the balance data from local storage
+  let balanceDataList = JSON.parse(localStorage.getItem('balanceData')) || [];
+
+  // Check if there are items in the balance per date list
+  if (balanceDataList.length > 0) {
+    // Remove the last item from the balance per date list
+    balanceDataList.pop();
+
+    // Remove the last item from the balance per date list in the DOM
+    balanceList.removeChild(balanceList.lastElementChild);
+
+    // Update the balance per date data in local storage
+    localStorage.setItem('balanceData', JSON.stringify(balanceDataList));
+  } else {
+    // If the balance per date list is empty, show an alert
+    alert('There are no balance dates to delete.');
+  }
+});
