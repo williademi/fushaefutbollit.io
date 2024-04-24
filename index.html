@@ -1,49 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Expense Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Expense Tracker</title>
 </head>
+
 <body>
-    <h2>Expense Tracker</h2>
-    <div class="container">
-        <h4>Your Balance</h4>
-        <h1 id="balance">$0.00</h1>
-        <div class="inc-exp-container">
-            <div>
-                <h4>Income</h4>
-                <p id="money-plus" class="money plus">+$0.00</p>
-            </div>
-            <div>
-                <h4>Expense</h4>
-                <p id="money-minus" class="money minus">-$0.00</p>
-            </div>
-        </div>
-        <h3>History</h3>
-        <ul id="list" class="list">
-            <!-- Transaction items will be dynamically added here -->
-            <!-- Example: <li class="minus">Cash <span>-$400</span><button class="delete-btn">x</button></li> -->
-        </ul>
-        <h3>Add new transaction</h3>
-        <form id="form">
-            <div class="form-control">
-                <label for="text">Text</label>
-                <input type="text" id="text" placeholder="Enter text..." required>
-            </div>
-            <div class="form-control">
-                <label for="amount">Amount (negative - expense, positive - income)</label>
-                <input type="number" id="amount" step="0.15" placeholder="Enter amount..." required>
-            </div>
-            <button class="btn">Add transaction</button>
-          <button class="btn  btnSave">Save</button>
-          <button class="btn btnsavePerDate">Save Total</button>
-          
-          
-        </form>
+  <h2>Expense Tracker</h2>
+  <div class="container">
+    <h4>Your Balance</h4>
+    <h1 id="balance">$0.00</h1>
+    <div class="inc-exp-container">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" class="money plus">+$0.00</p>
+      </div>
+      <div>
+        <h4>Expense</h4>
+        <p id="money-minus" class="money minus">-$0.00</p>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <h3>History</h3>
+    <ul id="list" class="list">
+      <!-- Transaction items will be dynamically added here -->
+      <!-- Example: <li class="minus">Cash <span>-$400</span><button class="delete-btn">x</button></li> -->
+    </ul>
+    <h3>Add new transaction</h3>
+    <form id="form">
+      <div class="form-control">
+        <label for="text">Text</label>
+        <input type="text" id="text" placeholder="Enter text..." required>
+      </div>
+      <div class="form-control">
+        <label for="amount">Amount (negative - expense, positive - income)</label>
+        <input type="number" id="amount" splaceholder="Enter amount..." required>
+      </div>
+      <button class="btn">Add transaction</button>
+      <button class="btn  btnSave">Save</button>
+
+
+
+    </form>
+    <button class="btn btnDelete">DELETE</button>
+    <button class="btn btnSaveBalance" type="submit">Save Balance</button>
+     <button class="btn btnDeleteBalance" type="submit">Delete Last Balance Date</button>
+    <h3>Balance per Date</h3>
+    <ul id="balanceList"></ul>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
