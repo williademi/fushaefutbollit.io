@@ -243,3 +243,42 @@ deleteLastBalanceButton.addEventListener('click', function(event) {
     alert('There are no balance dates to delete.');
   }
 });
+
+
+// Function to export expense data to CSV
+function exportToCSV() {
+  let csvContent = "Date,Category,Amount\n";
+  transactions.forEach(transaction => {
+      csvContent += `${transaction.date},${transaction.text},${transaction.amount}\n`;
+  });
+  let blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  let link = document.createElement("a");
+  link.href = window.URL.createObjectURL(blob);
+  link.setAttribute("download", "expenses.csv");
+  document.body.appendChild(link);
+  link.click();
+}
+
+// Attach event listener to export button
+document.getElementById("exportButton").addEventListener("click", exportToCSV);
+
+// Function to import expense data from CSV
+function importFromCSV() {
+  let file = document.getElementById("importInput").files[0];
+  if (file) {
+      let reader = new FileReader();
+      reader.onload = function(event) {
+          let csvData = event.target.result;
+          let lines = csvData.split("\n");
+          lines.forEach(line => {
+              let [date, text, amount] = line.split(",");
+              transactions.push({ date, text, amount: parseFloat(amount) });
+          });
+          updateUI();
+      };
+      reader.readAsText(file);
+  }
+}
+
+// Attach event listener to import button
+document.getElementById("importButton").addEventListener("click", importFromCSV);
