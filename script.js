@@ -282,3 +282,17 @@ function importFromCSV() {
 
 // Attach event listener to import button
 document.getElementById("importButton").addEventListener("click", importFromCSV);
+
+function handleSearch() {
+  const searchText = document.getElementById('searchInput').value.toLowerCase();
+  const filteredTransactions = transactions.filter(transaction =>
+      transaction.text.toLowerCase().includes(searchText)
+  );
+  // Clear the existing transaction list
+  listEl.innerHTML = '';
+  // Add the filtered transactions to the DOM
+  filteredTransactions.forEach(addTransactionDOM);
+  // Update balance, income, and expense
+  updateValues();
+}
+document.getElementById('searchInput').addEventListener('input', handleSearch);
