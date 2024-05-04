@@ -16,13 +16,13 @@ body {
 
 
 /* Container for the expense tracker */
-.container  {
+.container .balance-container {
     max-width: 100%;
     margin: 30px auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+  }
 
 /* Balance, income, and expense display */
 .inc-exp-container {
@@ -107,10 +107,3 @@ body {
     background: #555;
 }
 
-.balance-container {
-    max-width: 100%;
-    margin: 30px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
