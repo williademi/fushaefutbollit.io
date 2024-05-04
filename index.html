@@ -53,12 +53,15 @@
     <button class="btn" id="exportButton">Export to CSV</button>
     <input type="file" id="importInput" accept=".csv">
     <button class="btn" id="importButton">Import from CSV</button>
-    <button class="btn btnDeleteBalance" type="submit">Fshi bilancin e fundit per date</button>
 
-    <h3>Bilanci per Date</h3>
-    <ul id="balanceList" class="balanceList"></ul>
-
+    <div class="balance-container">
+      <h3>Bilanci per Date</h3>
+      <ul id="balanceList" class="balanceList"></ul>
+      <div id="totalBalance">0</div>
+      <button class="btn btnDeleteBalance" type="submit">Fshi bilancin e fundit per date</button>
+    </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
   <script src="script.js"></script>

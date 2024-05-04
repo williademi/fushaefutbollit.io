@@ -296,3 +296,34 @@ function handleSearch() {
   updateValues();
 }
 document.getElementById('searchInput').addEventListener('input', handleSearch);
+
+// Function to calculate the total balance from all entries in balanceList
+function calculateTotalBalance() {
+  // Get balance data from local storage
+  const balanceDataJSON = localStorage.getItem('balanceData');
+
+  // Initialize total balance
+  let totalBalance = 0;
+
+  // If there's balance data in local storage, parse and calculate total balance
+  if (balanceDataJSON) {
+    const balanceDataList = JSON.parse(balanceDataJSON);
+    balanceDataList.forEach(data => {
+      totalBalance += parseFloat(data.balance);
+    });
+  }
+
+  return totalBalance.toFixed(2); // Ensure two decimal places
+}
+
+// Function to update the UI with the total balance
+function updateTotalBalanceUI() {
+  // Calculate total balance from all entries
+  const totalBalanceAllEntries = calculateTotalBalance();
+
+  // Update the UI to display the total balance
+  document.getElementById('totalBalance').textContent = `Total Balance: $${totalBalanceAllEntries}`;
+}
+
+// Call the function to update total balance UI when the page loads
+document.addEventListener("DOMContentLoaded", updateTotalBalanceUI);
